@@ -107,6 +107,7 @@
   .card{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:24px}
   .card .ic{width:38px;height:38px;border-radius:10px;background:var(--green-soft);border:1px solid var(--green-bd);
             color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:14px}
+  .card .ic svg{width:20px;height:20px;display:block}
   .card p{color:var(--muted);margin-top:8px;font-size:15px}
   @media(max-width:680px){.grid2{grid-template-columns:1fr}}
 
@@ -119,18 +120,19 @@
   .fit li{display:flex;gap:12px;font-size:15px;align-items:flex-start}
   .fit .yes li::before{content:"✓";color:var(--green);font-weight:800}
   .fit .no li{color:var(--muted)}
-  .fit .no li::before{content:"✕";color:#566479;font-weight:800}
+  .fit .no li::before{content:"✕";color:#FF5C5C;font-weight:800}
   @media(max-width:680px){.fit{grid-template-columns:1fr}}
 
   /* ---- bloco 360 (signature) ---- */
   .b360{position:relative;background:linear-gradient(180deg,#0E1626,#0B1220);border:1px solid var(--line);border-radius:20px;
-        padding:48px;overflow:hidden}
-  .b360 .water{position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-weight:800;font-size:230px;
-        color:rgba(43,212,106,.07);line-height:1;pointer-events:none}
-  .b360 .inner{position:relative;max-width:620px}
+        padding:64px 40px;overflow:hidden;text-align:center}
+  .b360 .water{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:800;font-size:300px;
+        color:rgba(43,212,106,.05);line-height:1;letter-spacing:-.04em;pointer-events:none}
+  .b360 .inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
   .b360 h2{margin:18px 0 14px}
-  .b360 .btn{margin-top:26px}
-  @media(max-width:680px){.b360{padding:32px}.b360 .water{font-size:150px}}
+  .b360 .lead{margin:0 auto}
+  .b360 .btn{margin-top:28px}
+  @media(max-width:680px){.b360{padding:40px 24px}.b360 .water{font-size:170px}}
 
   /* ---- diferencial band ---- */
   .band{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -186,8 +188,8 @@
   <!-- HERO -->
   <header class="hero">
     <div class="wrap">
-      <span class="pill">Para donos de e-commerce que pararam de crescer</span>
-      <h1>Descubra em 1 hora por que seu e-commerce <span class="g">parou de crescer</span> e o que fazer nos próximos 90 dias<span class="g">.</span></h1>
+      <span class="pill">Para donos de e-commerce</span>
+      <h1>Descubra em 1 hora por que seu e-commerce <span class="g">parou de crescer</span> e o que fazer nos próximos <span style="white-space:nowrap">90 dias<span class="g">.</span></span></h1>
       <p class="lead">Uma sessão estratégica gratuita com Cristiano Creczyenski. Análise real do seu caso, não papo genérico.</p>
       <div class="hero-cta">
         <a class="btn" href="https://metris.digital/form/?utm_source=cristiano&utm_medium=ads&utm_campaign=analise-ecommerce-360&origem=funil-cristiano">Agendar minha análise gratuita <span class="arr">→</span></a>
@@ -233,10 +235,10 @@
       <div class="center"><span class="pill">O que você recebe na 1 hora</span>
       <h2 style="margin:18px 0 8px">Uma leitura estratégica do seu negócio, <span class="g">não um relatório pra engavetar</span></h2></div>
       <div class="grid2">
-        <div class="card"><div class="ic">✓</div><h3>Canais de aquisição</h3><p>Revisão de onde você está queimando verba hoje.</p></div>
-        <div class="card"><div class="ic">✓</div><h3>ROAS, CAC e LTV</h3><p>Leitura dos seus números. Se você não os tem claros, esse já é o primeiro problema.</p></div>
-        <div class="card"><div class="ic">✓</div><h3>Prioridades de 90 dias</h3><p>As 3 frentes que mais movem seu resultado no curto prazo.</p></div>
-        <div class="card"><div class="ic">✓</div><h3>Plano de ação prático</h3><p>O que fazer na sequência, com clareza pra executar.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8.5V20l-4 1v-8.5L3 4z"/></svg></div><h3>Canais de aquisição</h3><p>Revisão de onde você está queimando verba hoje.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3.5-4 3 2.5L21 6"/><path d="M21 10V6h-4"/></svg></div><h3>ROAS, CAC e LTV</h3><p>Leitura dos seus números. Se você não os tem claros, esse já é o primeiro problema.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div><h3>Prioridades de 90 dias</h3><p>As 3 frentes que mais movem seu resultado no curto prazo.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="5" width="12" height="16" rx="2"/><rect x="9" y="3" width="6" height="3" rx="1"/><path d="M9 13l2 2 4-4"/></svg></div><h3>Plano de ação prático</h3><p>O que fazer na sequência, com clareza pra executar.</p></div>
       </div>
     </div>
   </section>
@@ -285,7 +287,7 @@
   <section class="band">
     <div class="wrap">
       <span class="pill">Por que não é mais do mesmo</span>
-      <h2 style="margin-top:18px">Não é auditoria de anúncios. <span class="g">Não é consultoria genérica.</span></h2>
+      <h2 style="margin-top:18px">Não é auditoria de anúncios.<br><span class="g">Não é consultoria genérica.</span></h2>
       <p class="lead">É a leitura estratégica do seu negócio inteiro, feita por quem já acelerou marcas grandes e gerou mais de R$ 750 milhões em vendas.</p>
     </div>
   </section>
