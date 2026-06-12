@@ -148,17 +148,36 @@
   @media(max-width:680px){.steps{grid-template-columns:1fr}}
 
   /* ---- depoimentos ---- */
-  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:38px}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
   .quote{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column}
-  .quote .mark{color:var(--green);font-size:34px;font-weight:800;line-height:.6}
-  .quote .h{font-weight:700;font-size:18px;margin:18px 0 12px}
+  .quote .metrics{display:flex;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}
+  .quote .m{padding:0 18px}
+  .quote .m:first-child{padding-left:0}
+  .quote .m+.m{border-left:1px solid var(--line)}
+  .quote .m .mv{font-weight:800;font-size:26px;color:var(--green);line-height:1}
+  .quote .m .ml{color:var(--muted);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-top:5px}
+  .quote .h{font-weight:700;font-size:17.5px;margin:0 0 12px;line-height:1.3}
   .quote .body{color:var(--muted);font-size:14.5px;flex:1}
-  .quote .by{display:flex;align-items:center;gap:12px;margin-top:22px}
+  .quote .foot{margin-top:22px}
+  .quote .by{display:flex;align-items:center;gap:12px}
+  .quote .vbtn{margin-top:16px;display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14px;color:var(--green);text-decoration:none}
+  .quote .vbtn .play{width:22px;height:22px;border-radius:50%;background:var(--green);color:var(--green-ink);display:flex;align-items:center;justify-content:center;font-size:9px;padding-left:1px}
+  .quote .vbtn:hover{filter:brightness(1.12)}
   .avatar{width:42px;height:42px;border-radius:50%;background:var(--green-soft);border:1px solid var(--green-bd);
           color:var(--green);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
   .by .nm{font-weight:600;font-size:14.5px}
   .by .rl{color:var(--green);font-size:13px}
-  @media(max-width:780px){.quotes{grid-template-columns:1fr}}
+  @media(max-width:880px){.quotes{grid-template-columns:1fr}}
+
+  /* ---- faq ---- */
+  .faq-list{max-width:760px;margin:38px auto 0;display:grid;gap:12px}
+  .faq{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .faq summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:600;font-size:16px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .ico{flex:0 0 auto;width:26px;height:26px;border-radius:7px;border:1px solid var(--green-bd);background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;line-height:1;transition:transform .2s ease}
+  .faq[open] summary .ico{transform:rotate(45deg)}
+  .faq .ans{padding:0 22px 20px;color:var(--muted);font-size:15px}
+  .faq summary:focus-visible{outline:2px solid var(--green);outline-offset:-2px;border-radius:8px}
 
   /* ---- CTA final (azul) ---- */
   .cta{background:linear-gradient(135deg,var(--blue),var(--blue-2));text-align:center}
@@ -309,20 +328,65 @@
     <div class="wrap">
       <div class="center"><span class="pill">Depoimentos</span>
       <h2 style="margin:18px 0 8px">Veja o que dizem <span class="g">quem aplicou o método</span></h2>
-      <p class="lead">Histórias reais de lojistas que profissionalizaram a operação e transformaram o e-commerce no principal canal do negócio.</p></div>
+      <p class="lead">Cases reais, com número e vídeo. Quem estava travado, aplicou o método e destravou.</p></div>
       <div class="quotes">
         <div class="quote">
-          <div class="mark">&#8220;</div>
-          <div class="h">"Estamos muito contentes com o resultado"</div>
-          <div class="body">Trabalhamos com o Cristiano desde o início da nossa marca. Ele nos encorajou a montar o e-commerce e, desde então, a operação digital virou nosso principal canal. Hoje vendemos para o Brasil inteiro e também nos EUA. Atendimento próximo, estratégia forte e performance real.</div>
-          <div class="by"><div class="avatar">FB</div><div><div class="nm">Francis Barbosa</div><div class="rl">CMO Malacara</div></div></div>
+          <div class="metrics"><div class="m"><div class="mv">23x</div><div class="ml">ROAS</div></div><div class="m"><div class="mv">8.000%</div><div class="ml">Crescimento</div></div></div>
+          <div class="h">"Do zero no digital ao principal canal da marca"</div>
+          <div class="body">Marca de botas e couro com 10 anos e 3 lojas na Serra Gaúcha. Construímos o e-commerce do zero com o Cristiano, e hoje ele é o canal estratégico, vendendo para o Brasil inteiro e também para os EUA.</div>
+          <div class="foot">
+            <div class="by"><div class="avatar">FB</div><div><div class="nm">Francis Barbosa</div><div class="rl">Diretor de Marketing · Malacara</div></div></div>
+            <a class="vbtn" href="https://metris.digital/case-malacara/" target="_blank" rel="noopener"><span class="play">▶</span> Assistir ao case</a>
+          </div>
         </div>
         <div class="quote">
-          <div class="mark">&#8220;</div>
-          <div class="h">"Existe uma Vinhos Collection antes e depois da Metris"</div>
-          <div class="body">Tínhamos um bom produto, mas o site não vendia. Depois de conhecer o Cristiano, ficou claro que precisávamos de uma operação profissional. A Metris reestruturou tudo: layout, campanhas, tráfego e posicionamento. Multiplicamos o faturamento por 6 e hoje vendemos vinhos para o Brasil inteiro com consistência e escala.</div>
-          <div class="by"><div class="avatar">TI</div><div><div class="nm">Tiago</div><div class="rl">Cofundador Vinhos Collection</div></div></div>
+          <div class="metrics"><div class="m"><div class="mv">10x</div><div class="ml">ROAS</div></div><div class="m"><div class="mv">+600%</div><div class="ml">Crescimento</div></div></div>
+          <div class="h">"A virada começou por um diagnóstico do negócio"</div>
+          <div class="body">Vinho importado de nicho, com bom produto mas baixo volume e sem funil estruturado. Começamos por um diagnóstico profundo e ajustamos marca, oferta, canais e métricas. As vendas online cresceram mais de 600%.</div>
+          <div class="foot">
+            <div class="by"><div class="avatar">TI</div><div><div class="nm">Tiago</div><div class="rl">Sócio · Vinhos Collection</div></div></div>
+            <a class="vbtn" href="https://metris.digital/case-vinhos-collection/" target="_blank" rel="noopener"><span class="play">▶</span> Assistir ao case</a>
+          </div>
         </div>
+        <div class="quote">
+          <div class="metrics"><div class="m"><div class="mv">+20x</div><div class="ml">ROAS</div></div><div class="m"><div class="mv">10.000%</div><div class="ml">Crescimento</div></div></div>
+          <div class="h">"Não tínhamos canal digital. Hoje é prioridade da marca."</div>
+          <div class="body">Indústria moveleira do Grupo Sandrin, mais de 50 anos e fábrica de 17 mil m², mas sem e-commerce que vendesse. Estruturamos o canal próprio do zero, e o digital virou prioridade estratégica da empresa.</div>
+          <div class="foot">
+            <div class="by"><div class="avatar">OS</div><div><div class="nm">Octavio Sandrin</div><div class="rl">Diretor de E-commerce · Belmax Móveis</div></div></div>
+            <a class="vbtn" href="https://metris.digital/case-belmax-moveis/" target="_blank" rel="noopener"><span class="play">▶</span> Assistir ao case</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="center"><span class="pill">Perguntas frequentes</span>
+      <h2 style="margin:18px 0 0">As dúvidas que <span class="g">todo dono de e-commerce</span> tem antes de agendar</h2></div>
+      <div class="faq-list">
+        <details class="faq">
+          <summary>Se é com o Cristiano e é de graça, qual é a pegadinha?<span class="ico">+</span></summary>
+          <div class="ans">Não tem pegadinha. A análise é gratuita porque uma parte de quem faz acaba virando cliente da Metris depois. Se fizer sentido pro seu caso, a gente conversa sobre isso no fim. Se não fizer, você sai com o diagnóstico do mesmo jeito, sem compromisso nenhum.</div>
+        </details>
+        <details class="faq">
+          <summary>Vou falar com o Cristiano mesmo ou com um vendedor?<span class="ico">+</span></summary>
+          <div class="ans">Com o Cristiano. É ele quem olha o seu caso na hora, com 17 anos de e-commerce e marcas como Colombo, Fila e Melissa no histórico. Não é call de vendedor seguindo script.</div>
+        </details>
+        <details class="faq">
+          <summary>Preciso preparar alguma coisa ou mostrar meus números antes?<span class="ico">+</span></summary>
+          <div class="ans">Não precisa montar relatório. No cadastro você responde algumas perguntas rápidas pra o Cristiano já chegar sabendo do seu caso. Se tiver seus números na mão (faturamento, ROAS, CAC), melhor ainda, mas dá pra avançar bastante mesmo sem tudo organizado.</div>
+        </details>
+        <details class="faq">
+          <summary>Quanto tempo dura e como funciona?<span class="ico">+</span></summary>
+          <div class="ans">É 1 hora, online, por videochamada, no dia e horário que você escolher. Depois do cadastro, o link cai no seu e-mail e na sua agenda. Você sai da call com as prioridades dos próximos 90 dias, não com promessa vaga.</div>
+        </details>
+        <details class="faq">
+          <summary>Serve pro meu nicho e pro tamanho da minha loja?<span class="ico">+</span></summary>
+          <div class="ans">Serve pra qualquer e-commerce que já vende e quer crescer, de moda a vinho, de nicho a marca grande. O método de leitura é o mesmo, o que muda é a aplicação no seu caso. Se você ainda não vende online, aí não é o momento.</div>
+        </details>
       </div>
     </div>
   </section>
